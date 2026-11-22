@@ -1,0 +1,10 @@
+__GAKUFU__ {
+	reverse_proxy app:8000
+}
+
+droneops.businessmaker.net {
+	handle_path /droneops* {
+		reverse_proxy host.docker.internal:8787
+	}
+	respond "Drone Ops Academy server" 200
+}
